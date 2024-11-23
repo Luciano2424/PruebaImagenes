@@ -1,12 +1,13 @@
 import streamlit as st
-from PIL import Image
 
-# Cargar la imagen
-image_ANGE1 = "ANGE1.jpg"
-img = Image.open(image_ANGE1)
+# Título de la página
+st.title("Botón de selección en Streamlit")
 
-# Redimensionar la imagen a 113x152 píxeles (aproximadamente 3cm x 4cm)
-img_resized = img.resize((113, 152))
+# Crear el grupo de botones de selección
+opcion_seleccionada = st.radio(
+    "Selecciona una opción",  # Etiqueta
+    ("Opción 1", "Opción 2", "Opción 3")  # Opciones
+)
 
-# Mostrar la imagen redimensionada
-st.image(img_resized)
+# Mostrar la opción seleccionada
+st.write(f"Has seleccionado: {opcion_seleccionada}")
