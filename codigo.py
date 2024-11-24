@@ -18,8 +18,8 @@ image_XSET = "XSET.jpg"
 image_FNC = "FNC.jpg"
 image_FPX = "FPX.jpg"
 image_OPTC = "OPTC.jpg"
-image_LOUD = "LOUD.jpg"
 image_TL = "TL.jpg"
+image_LOUD ="LOUD.jpg"
 
 # Función para mostrar la imagen
 def display_logos(image_path):
