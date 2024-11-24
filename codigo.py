@@ -80,9 +80,48 @@ if st.session_state.page == "home":
     video_presentación_ = "https://www.youtube.com/watch?v=j2Z4qYJ3Jtc&ab_channel=VALORANTChampionsTour"
     st.video(video_presentación_)
 
-    col1, col2, col3 = st.columns([1, 3, 1])
-    with col2:
-        st.subheader("Presentación de los equipos participantes del torneo")
+    # Selección de la página a navegar
+    page_selection = st.selectbox(
+        "Selecciona una opción para ver los datos:",
+        [
+            "Seleccione una opción",
+            "Mejor rendimiento global",
+            "Peor rendimiento global",
+            "Jugador con más kills",
+            "Mejor rendimiento por equipo"
+        ]
+    )
+
+        # Cambiar el estado de la página
+    if page_selection == "Mejor rendimiento global":
+        st.session_state.page = "mejor_rendimiento"
+    elif page_selection == "Peor rendimiento global":
+        st.session_state.page = "peor_rendimiento"
+    elif page_selection == "Jugador con más kills":
+        st.session_state.page = "mas_kills"
+    elif page_selection == "Mejor rendimiento por equipo":
+        st.session_state.page = "mejor_rendimiento_por_equipo"
+
+# Página 1: Mejor rendimiento
+elif st.session_state.page == "mejor_rendimiento":
+    st.title("Jugador con mejor rendimiento global")
+    mejor_rendimiento()
+
+# Página 2: Peor rendimiento
+elif st.session_state.page == "peor_rendimiento":
+    st.title("Jugador con peor rendimiento global")
+    peor_rendimiento()
+
+# Página 3: Jugador con más kills
+elif st.session_state.page == "mas_kills":
+    st.title("Jugador con más kills")
+    mas_kills()
+
+# Página 4: Mejor rendimiento por equipo
+elif st.session_state.page == "mejor_rendimiento_por_equipo":
+    st.title("Jugadores con mejor rendimiento por equipo")
+    mejor_rendimiento_por_equipo()
+    
 
     # Mostrar logos de los equipos
     col1, col2, col3 = st.columns([1, 1, 1]) 
