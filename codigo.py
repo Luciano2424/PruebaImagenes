@@ -92,6 +92,29 @@ if st.session_state.page == "home":
         ]
     )
 
+    # Mostrar logos de los equipos
+    col1, col2, col3 = st.columns([1, 1, 1]) 
+    with col2:
+        display_logo(image_LOUD, "1 LOUD")
+
+    col4, col5, col6 = st.columns([1, 1, 1])  
+    with col4:
+        display_logo(image_OPTC, "2 OPTC")
+    with col6:
+        display_logo(image_DRX, "3 DRX")
+
+    col7, col8, col9, col10, col11 = st.columns([1, 1, 1, 1, 1])  
+    with col7:
+        display_logo(image_FPX, "4 FPX")
+    with col8:
+        display_logo(image_XSET, "5 XSET")
+    with col9:
+        display_logo(image_FNC, "6 FNC")
+    with col10:
+        display_logo(image_TL, "7 TeamLiquid")
+    with col11:
+        display_logo(image_LEV, "8 Leviatán")
+
         # Cambiar el estado de la página
     if page_selection == "Mejor rendimiento global":
         st.session_state.page = "mejor_rendimiento"
@@ -122,52 +145,6 @@ elif st.session_state.page == "mejor_rendimiento_por_equipo":
     st.title("Jugadores con mejor rendimiento por equipo")
     mejor_rendimiento_por_equipo()
     
-
-    # Mostrar logos de los equipos
-    col1, col2, col3 = st.columns([1, 1, 1]) 
-    with col2:
-        display_logo(image_LOUD, "1 LOUD")
-
-    col4, col5, col6 = st.columns([1, 1, 1])  
-    with col4:
-        display_logo(image_OPTC, "2 OPTC")
-    with col6:
-        display_logo(image_DRX, "3 DRX")
-
-    col7, col8, col9, col10, col11 = st.columns([1, 1, 1, 1, 1])  
-    with col7:
-        display_logo(image_FPX, "4 FPX")
-    with col8:
-        display_logo(image_XSET, "5 XSET")
-    with col9:
-        display_logo(image_FNC, "6 FNC")
-    with col10:
-        display_logo(image_TL, "7 TeamLiquid")
-    with col11:
-        display_logo(image_LEV, "8 Leviatán")
-
-    col1, col2, col3 = st.columns([1, 3, 1])  
-
-    with col2:
-        st.subheader("Presentación de los equipos participantes del torneo")
-        page_selection = st.selectbox(
-            "Datos que creemos te gustarán saber",
-            ["Ház click para desplegar las opciones", 
-             "Cuál fue el jugador con mejor rendimiento global del torneo", 
-             "Cuál fue el jugador con peor rendimiento global del torneo", 
-             "Cuál fue el jugador con más kills?", 
-             "Cuáles fueron los jugadores con mejor rendimiento de cada equipo?"]
-        )
-
-        if page_selection == "Cuál fue el jugador con mejor rendimiento global del torneo":
-            st.session_state.page = "mejor_rendimiento"
-        elif page_selection == "Cuál fue el jugador con peor rendimiento global del torneo":
-            st.session_state.page = "peor_rendimiento"
-        elif page_selection == "Cuál fue el jugador con más kills?":
-            st.session_state.page = "mas_kills"
-        elif page_selection == "Cuáles fueron los jugadores con mejor rendimiento de cada equipo?":
-            st.session_state.page = "mejor_rendimiento_por_equipo"
-
     st.subheader("Mejores momentos del torneo")
 
     st.subheader("¡Descubre el Poder de los Equipos!")
