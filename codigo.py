@@ -64,7 +64,7 @@ if st.session_state.page == "home":
     st.video(video_presentación_)
 
 
- col1, col2, col3 = st.columns([1, 3, 1])  
+ col1, col2, col3 = st.columns([1, 3, 1])
     with col2:
         st.subheader("Presentación de los equipos participantes del torneo")
 
