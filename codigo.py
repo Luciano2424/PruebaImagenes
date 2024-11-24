@@ -57,17 +57,6 @@ def display_image_with_caption(image_path, caption):
     )
 
 
-The IndentationError you're encountering is caused by a mismatch in indentation levels in your Python code. Python relies on indentation to define blocks of code, so even a small inconsistency (e.g., mixing spaces and tabs or different levels of indentation) can lead to errors.
-
-In your case, the error is at line 67, which is the line where you're trying to create columns in Streamlit with col1, col2, col3 = st.columns([1, 3, 1]).
-
-To fix this error, ensure that the indentation level is consistent across the code block. Specifically, check the following:
-
-Ensure consistent use of spaces or tabs: Python requires that you use either spaces or tabs for indentation, but not a mixture of both. You should configure your code editor to use spaces consistently.
-Align the col1, col2, col3 = st.columns([1, 3, 1]) line correctly: The col1, col2, col3 line seems to be at the wrong indentation level relative to the block it's in. Make sure this line has the same indentation as other lines at the same level.
-Here’s a corrected version of your code block:
-python
-Copiar código
 if st.session_state.page == "home":  
     st.title("Datos que creemos te gustarán saber")
     
