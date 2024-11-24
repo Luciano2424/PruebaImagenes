@@ -22,7 +22,7 @@ def display_logos(image_path):
     img_resized = imagenes_logos(image_path)
     st.image(img_resized)
 
-def imagenes_logos2((image_path, width=100, height=100):
+def imagenes_logos2(image_path, width=100, height=100):
     img = Image.open(image_path)
     img_resized = img.resize((width, height))
     return img_resized
