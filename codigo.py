@@ -9,5 +9,5 @@ def display_image_with_caption(image_path, caption):
 
 col1, col2, col3 = st.columns([1,2,3])
 with col2:
-    st.subheadr("Leviatan")
+    st.subheader("Leviatan")
     display_image_with_caption(image_Lev)
