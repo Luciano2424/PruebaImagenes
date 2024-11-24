@@ -46,4 +46,4 @@ with col8:
 with col9:
     display_logos(image_TL, "TeamLiquid")
 with col10:
-    display_logos(image_LEV, "LEVIATAN)
+    display_logos(image_LEV, "LEVIATAN")
