@@ -17,9 +17,9 @@ def display_image_with_caption(image_path, caption):
     st.markdown(f"**{caption}**", unsafe_allow_html=True)
 
 # Diseño en columnas
-col1, col2, col3 = st.columns([1, 2, 3])
+col1, col2, col3 = st.columns([1, 2, 1])  # Columnas centradas: el medio más ancho
 
 # Mostrar la imagen en el centro de la columna 2
 with col2:
-    st.subheader("Leviatan")
-    display_image_with_caption(image_LEV, "Equipo Leviatan")
+    st.subheader("Leviatan")  # Subtítulo
+    display_image_with_caption(image_LEV, "Equipo Leviatan")  # Imagen y título
