@@ -44,7 +44,7 @@ with col7:
     display_logos(image_FPX, "   4 FPX")
 with col8:
     display_logos(image_XSET, "   5 XSET")
-with col9::
+with col9:
     display_logos(image_FNC, "   6 FNC")
 with col10:
     display_logos(image_TL, "   7 TeamLiquid")
