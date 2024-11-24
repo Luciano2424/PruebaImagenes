@@ -30,20 +30,20 @@ def display_logos(image_path):
 # Pirámide logos top1-8
 col1, col2, col3 = st.columns([1, 1, 1]) 
 with col2:
-    display_logos(image_LOUD)
+    display_logos(image_LOUD, "LOUD")
 
 col4, col5, col6 = st.columns([1, 1, 1])  
 with col4:
-    display_logos(image_OPTC)
+    display_logos(image_OPTC, "OPTC")
 with col6:
-    display_logos(image_DRX)
+    display_logos(image_DRX, "DRX")
 
 col7, col8, col9, col10 = st.columns([1, 1, 1, 1])  
 with col7:
-    display_logos(image_FPX)
+    display_logos(image_FPX, "FPX")
 with col8:
-    display_logos(image_XSET)
+    display_logos(image_XSET, "XSET")
 with col9:
-    display_logos(image_TL)
+    display_logos(image_TL, "TeamLiquid")
 with col10:
-    display_logos(image_LEV)
+    display_logos(image_LEV, "LEVIATAN)
