@@ -63,6 +63,36 @@ if st.session_state.page == "home":
     video_presentación_ = "https://www.youtube.com/watch?v=j2Z4qYJ3Jtc&ab_channel=VALORANTChampionsTour"
     st.video(video_presentación_)
 
+
+ col1, col2, col3 = st.columns([1, 3, 1])  
+    with col2:
+        st.subheader("Presentación de los equipos participantes del torneo")
+
+    # Mostrar logos de los equipos
+    col1, col2, col3 = st.columns([1, 1, 1]) 
+    with col2:
+        display_logo(image_LOUD, "1 LOUD")
+
+    col4, col5, col6 = st.columns([1, 1, 1])  
+    with col4:
+        display_logo(image_OPTC, "2 OPTC")
+    with col6:
+        display_logo(image_DRX, "3 DRX")
+
+    col7, col8, col9, col10, col11 = st.columns([1, 1, 1, 1, 1])  
+    with col7:
+        display_logo(image_FPX, "4 FPX")
+    with col8:
+        display_logo(image_XSET, "5 XSET")
+    with col9:
+        display_logo(image_FNC, "6 FNC")
+    with col10:
+        display_logo(image_TL, "7 TeamLiquid")
+    with col11:
+        display_logo(image_LEV, "8 Leviatán")
+
+
+    
     col1, col2, col3 = st.columns([1, 3, 1])  
 
     with col2:
