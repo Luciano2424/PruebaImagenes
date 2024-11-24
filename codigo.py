@@ -31,7 +31,7 @@ def display_logos(image_path, name, width=100, height=100):
 # Pirámide logos top1-8
 col1, col2, col3 = st.columns([1, 1, 1]) 
 with col2:
-    display_logos(image_LOUD, "1 LOUD")
+    display_logos(image_LOUD, "   1 LOUD")
 
 col4, col5, col6 = st.columns([1, 1, 1])  
 with col4:
