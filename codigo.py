@@ -7,15 +7,15 @@ def imagenes_logos(image_path, width=200, height=200):
     img_resized = img.resize((width, height))
     return img_resized
 
-# Ruta de la imagen
+# Rutas de las imágenes
 image_LEV = "LEV.jpg"
 image_DRX = "DRX.jpg"
 image_XSET = "XSET.jpg"
 image_FNC = "FNC.jpg"
-iage_FPX = "FPX.jpg"
+image_FPX = "FPX.jpg"  # Corregir el nombre de la variable
 image_OPTC = "OPTC.jpg"
 image_LOUD = "LOUD.jpg"
-image_TL ="TL.jpg"
+image_TL = "TL.jpg"  # Corregir el nombre de la variable
 
 # Función para mostrar la imagen
 def display_logos(image_path):
@@ -26,13 +26,12 @@ def imagenes_logos2(image_path, width=100, height=100):
     img = Image.open(image_path)
     img_resized = img.resize((width, height))
     return img_resized
-    
+
 def display_58(image_path):
-    img_reasized = imagenes_logos2(image_path)
+    img_resized = imagenes_logos2(image_path)  # Corregir nombre de variable
     st.image(img_resized)
 
-
-#Piramide logos top1-8
+# Pirámide logos top1-8
 col1, col2, col3 = st.columns([1, 1, 1]) 
 with col2:
     display_logos(image_LOUD)
@@ -43,7 +42,7 @@ with col4:
 with col6:
     display_logos(image_DRX)
 
-col7, col8, col9, col10= st.columns([1, 1, 1, 1])  
+col7, col8, col9, col10 = st.columns([1, 1, 1, 1])  
 with col7:
     display_logos2(image_FPX)
 with col8:
@@ -52,4 +51,3 @@ with col9:
     display_logos2(image_TL)
 with col10:
     display_logos2(image_LEV)
-
