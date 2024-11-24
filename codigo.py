@@ -14,7 +14,7 @@ image_XSET = "XSET.jpg"
 image_FNC = "FNC.jpg"
 iage_FPX = "FPX.jpg"
 image_OPTC = "OPTC.jpg"
-image_RX = "RX.jpg"
+image_LOUD = "LOUD.jpg"
 image_TL ="TL.jpg"
 
 # Función para mostrar la imagen
@@ -25,12 +25,12 @@ def display_logos(image_path):
 # Diseño piramidal
 col1, col2, col3 = st.columns([1, 1, 1])  # Primera fila de 3 columnas
 with col2:
-    display_logos(image_LEV)
+    display_logos(image_LOUD)
 
 # Segunda fila (2 imágenes)
 col4, col5, col6 = st.columns([1, 1, 1])  # Segunda fila de 3 columnas
 with col4:
-    display_logos(image_LEV)
+    display_logos(image_OPTC)
 with col6:
     display_logos(image_LEV)
 
