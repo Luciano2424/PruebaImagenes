@@ -2,7 +2,7 @@ import streamlit as st
 from PIL import Image
 
 # Definir la función resize_image para cambiar el tamaño de la imagen
-def resize_image(image_path, width=300, height=300):
+def resize_image(image_path, width=180, height=180):
     img = Image.open(image_path)
     img_resized = img.resize((width, height))
     return img_resized
