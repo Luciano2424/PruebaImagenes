@@ -2,8 +2,8 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Asegúrate de que el DataFrame df esté cargado
-# df = pd.read_csv("valorant champions istanbul.csv")  # Este es el CSV de tu DataFrame
+
+df = pd.read_csv("valorant champions istanbul.csv")  
 
 # Gráfico de KD/Rendimiento
 st.subheader("K/D Promedio por Equipo")
