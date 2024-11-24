@@ -9,6 +9,13 @@ def imagenes_logos(image_path, width=200, height=200):
 
 # Ruta de la imagen
 image_LEV = "LEV.jpg"
+image_DRX = "DRX.jpg"
+image_XSET = "XSET.jpg"
+image_FNC = "FNC.jpg"
+iage_FPX = "FPX.jpg"
+image_OPTC = "OPTC.jpg"
+image_RX = "RX.jpg"
+image_TL ="TL.jpg"
 
 # Función para mostrar la imagen
 def display_logos(image_path):
