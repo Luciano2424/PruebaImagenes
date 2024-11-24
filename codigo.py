@@ -149,70 +149,31 @@ if st.session_state.page == "home":
     with col11:
         display_logo(image_LEV, "8 Leviatán")
 
-    # Selección de página de equipo
-    paginas_equipos = st.selectbox(
-        "Deseas ver los mejores momentos de cada equipo?",
-        ["Selecciona el equipo del cual te gustaría saber más", 
-         "LOUD", 
-         "OPTC", 
-         "DRX", 
-         "FPX",
-         "XSET",
-         "FNC",
-         "TL",
-         "LEV"]
-    )
+   # Selección de datos adicionales
+page_selection = st.selectbox(
+    "Datos que creemos te gustarán saber",
+    ["Ház click para desplegar las opciones", 
+     "Cuál fue el jugador con mejor rendimiento global del torneo", 
+     "Cuál fue el jugador con peor rendimiento global del torneo", 
+     "Cuál fue el jugador con más kills?", 
+     "Cuáles fueron los jugadores con mejor rendimiento de cada equipo?"]
+)
 
-    # Mostrar gráficos de K/D, kills y muertes
-    st.subheader("¡Descubre el Poder de los Equipos!")
-    st.text("Este gráfico muestra cómo se desempeñan los equipos en cuanto a su ratio de Kills/Deaths (K/D). Los equipos con el mejor desempeño suelen tener una mayor proporción de muertes por baja, lo que refleja una ejecución más eficiente en el juego. ¡Ve quién lidera el torneo en rendimiento!")
-    plt.figure(figsize=(10, 6))
-    kd = df.groupby('Team')['K/D'].mean().sort_values(ascending=False)
-    plt.bar(kd.index, kd.values, color="purple")
-    plt.xlabel('Equipo')
-    plt.ylabel('Promedio K/D')
-    plt.title('K/D promedio por equipo')
-    plt.xticks(rotation="horizontal", ha='right')
-    st.pyplot()  
+# Redirigir a las páginas correspondientes según la selección del `selectbox`
+if page_selection == "Cuál fue el jugador con mejor rendimiento global del torneo":
+    st.session_state.page = "mejor_rendimiento"
 
-    st.subheader("¿Quién es el Rey de las Bajas?")
-    st.text("Este gráfico destaca la acumulación de kills de cada jugador a lo largo del torneo. Si estás buscando al jugador con más acción en el campo de batalla, aquí puedes ver quién se lleva la corona de las eliminaciones. ¡El jugador más letal está aquí!")
-    plt.figure(figsize=(15, 6))
-    kills = df.groupby('Player')['Kill'].mean().sort_values(ascending=False)
-    plt.bar(kills.index, kills.values)
-    plt.xlabel('Jugador')
-    plt.ylabel('Kills')
-    plt.title('Jugador con más kills')
-    plt.xticks(rotation=45, ha='right')
-    st.pyplot()  
+elif page_selection == "Cuál fue el jugador con peor rendimiento global del torneo":
+    st.session_state.page = "peor_rendimiento"
 
-    st.subheader("¡Las Muertes también Hablan!")
-    st.text("A veces el precio del juego es alto, y este gráfico muestra la cantidad de muertes de cada jugador. Aunque no es lo más positivo, saber quién lidera en esta categoría puede dar pistas sobre el estilo de juego o los desafíos a los que se enfrentan los jugadores. ¡Entérate de quiénes son los más golpeados en el torneo!")
-    plt.figure(figsize=(15, 6))
-    deaths = df.groupby('Player')['Death'].mean().sort_values(ascending=False)
-    plt.bar(deaths.index, deaths.values, color="red")
-    plt.xlabel('Jugador')
-    plt.ylabel('Muertes')
-    plt.title('Jugador con más muertes')
-    plt.xticks(rotation=45, ha='right')
-    st.pyplot() 
+elif page_selection == "Cuál fue el jugador con más kills?":
+    st.session_state.page = "mas_kills"
 
-    # Llamada a la página correspondiente del equipo
-    if paginas_equipos != "Selecciona el equipo del cual te gustaría saber más":
-        st.session_state.page = f"{paginas_equipos}_page"
+elif page_selection == "Cuáles fueron los jugadores con mejor rendimiento de cada equipo?":
+    st.session_state.page = "mejor_rendimiento_por_equipo"
 
-    # Selección de datos adicionales
-    page_selection = st.selectbox(
-        "Datos que creemos te gustarán saber",
-        ["Ház click para desplegar las opciones", 
-         "Cuál fue el jugador con mejor rendimiento global del torneo", 
-         "Cuál fue el jugador con peor rendimiento global del torneo", 
-         "Cuál fue el jugador con más kills?", 
-         "Cuáles fueron los jugadores con mejor rendimiento de cada equipo?"]
-    )
-
-    # Llamar a la función correspondiente según la selección
-elif st.session_state.page == "mejor_rendimiento":
+# Mostrar el contenido correspondiente
+if st.session_state.page == "mejor_rendimiento":
     st.title("Jugador con mejor rendimiento")
     mejor_rendimiento()
     display_image_with_caption(image_yay, "Presentación yay")
@@ -220,7 +181,7 @@ elif st.session_state.page == "mejor_rendimiento":
         st.session_state.page = "home"
 
 elif st.session_state.page == "peor_rendimiento":
-    st.title("Jugador con rendimiento mas bajo")
+    st.title("Jugador con rendimiento más bajo")
     peor_rendimiento()
     display_image_with_caption(image_ANGE1, "Presentación ANGE1")
     if st.button("Volver a la página principal"):
@@ -236,41 +197,5 @@ elif st.session_state.page == "mas_kills":
 elif st.session_state.page == "mejor_rendimiento_por_equipo":
     st.title("Jugadores con el mejor rendimiento por equipo")
     mejor_rendimiento_por_equipo()
-    if st.button("Volver a la página principal"):
-        st.session_state.page = "home"
-
-# Páginas de equipos específicos
-elif st.session_state.page == "LOUD_page":
-    LOUD_page()
-    if st.button("Volver a la página principal"):
-        st.session_state.page = "home"
-
-elif st.session_state.page == "OPTC_page":
-    OPTC_page()
-    if st.button("Volver a la página principal"):
-        st.session_state.page = "home"
-
-elif st.session_state.page == "FPX_page":
-    FPX_page()
-    if st.button("Volver a la página principal"):
-        st.session_state.page = "home"
-
-elif st.session_state.page == "XSET_page":
-    XSET_page()
-    if st.button("Volver a la página principal"):
-        st.session_state.page = "home"
-
-elif st.session_state.page == "FNC_page":
-    FNC_page()
-    if st.button("Volver a la página principal"):
-        st.session_state.page = "home"
-
-elif st.session_state.page == "TL_page":
-    TL_page()
-    if st.button("Volver a la página principal"):
-        st.session_state.page = "home"
-
-elif st.session_state.page == "LEV_page":
-    LEV_page()
     if st.button("Volver a la página principal"):
         st.session_state.page = "home"
