@@ -197,5 +197,29 @@ elif st.session_state.page == "mas_kills":
 elif st.session_state.page == "mejor_rendimiento_por_equipo":
     st.title("Jugadores con el mejor rendimiento por equipo")
     mejor_rendimiento_por_equipo()
+        # Primera fila de imágenes
+    col1, col2, col3, col4 = st.columns(4)
+    with col1:
+        display_image_with_caption(image_Less, "Less")
+    with col2:
+        display_image_with_caption(image_yay, "Yay")
+    with col3:
+        display_image_with_caption(image_MaKo, "MaKo")
+    with col4:
+        display_image_with_caption(image_suygetsu, "SUYGETSU")
+    
+    # Segunda fila de imágenes
+    col5, col6, col7, col8 = st.columns(4)
+    with col5:
+        display_image_with_caption(image_Cryocells, "Cryocells")
+    with col6:
+        display_image_with_caption(image_Scream, "Scream")
+    with col7:
+        display_image_with_caption(image_kiNgg, "kiNgg")
+    with col8:
+        display_image_with_caption(image_ANGE1, "ANGE1")
+
+    if st.button("Volver a la página principal"):
+        st.session_state.page = "home"
     if st.button("Volver a la página principal"):
         st.session_state.page = "home"
