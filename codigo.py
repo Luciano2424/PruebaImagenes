@@ -14,6 +14,14 @@ image_Scream = "Scream.jpg"
 image_kiNgg = "kiNgg.jpg"
 image_suygetsu = "suygetsu.jpg"
 image_Less = "Less.jpeg"
+image_LEV = "LEV.jpg"
+image_DRX = "DRX.jpg"
+image_XSET = "XSET.jpg"
+image_FNC = "FNC.jpg"
+image_FPX = "FPX.jpg"
+image_OPTC = "OPTC.jpg"
+image_TL = "TL.jpg"
+image_LOUD = "LOUD.jpg"
 
 def mejor_rendimiento():
     filas_seleccionadas = df.iloc[[5]]  
