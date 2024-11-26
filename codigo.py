@@ -1,6 +1,8 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 
+df = pd.read_csv("valorant champions istanbul.csv")
+
 # Función que muestra el gráfico
 def mostrar_grafico():
     st.subheader("¡Descubre el Poder de los Equipos!")
