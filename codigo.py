@@ -18,7 +18,7 @@ def mostrar_grafico():
     plt.title('K/D promedio por equipo')
     plt.xticks(rotation="horizontal", ha='right')
     st.pyplot()
-    
+
 def mostrar_grafico2():
     st.subheader("¿Quién es el Rey de las Bajas?")
     st.text("Este gráfico destaca la acumulación de kills de cada jugador a lo largo del torneo. Si estás buscando al jugador con más acción en el campo de batalla, aquí puedes ver quién se lleva la corona de las eliminaciones. ¡El jugador más letal está aquí!")
@@ -31,10 +31,9 @@ def mostrar_grafico2():
     plt.xticks(rotation=45, ha='right')
     st.pyplot() 
 
-
 def mostrar_grafico3():
     st.subheader("¡Las Muertes también Hablan!")
-    st.text("A veces el precio del juego es alto, y este gráfico la cantidad de muertes de cada jugador. Aunque no es lo más positivo, saber quién lidera en esta categoría puede dar pistas sobre el estilo de juego o los desafíos a los que se enfrentan los jugadores. ¡Entérate de quiénes son los más golpeados en el torneo!")
+    st.text("A veces el precio del juego es alto, y este gráfico muestra la cantidad de muertes de cada jugador. Aunque no es lo más positivo, saber quién lidera en esta categoría puede dar pistas sobre el estilo de juego o los desafíos a los que se enfrentan los jugadores. ¡Entérate de quiénes son los más golpeados en el torneo!")
     plt.figure(figsize=(15, 6))
     deaths = df.groupby('Player')['Death'].mean().sort_values(ascending=False)
     plt.bar(deaths.index, deaths.values, color="red")
@@ -45,7 +44,7 @@ def mostrar_grafico3():
     st.pyplot() 
 
 def mostrar_grafico4():
-     st.subheader("Equipos Triunfadores: ¿Quién Tiene la Mayor Cantidad de Victorias?")
+    st.subheader("Equipos Triunfadores: ¿Quién Tiene la Mayor Cantidad de Victorias?")
     st.text("El éxito no solo se mide en kills, sino también en victorias. Este gráfico revela a los equipos que más veces han salido victoriosos durante el torneo, mostrando quién tiene el control total en el campo de juego. ¡Descubre al equipo imbatible de esta edición!")
     plt.figure(figsize=(15, 6))
     victories = df.groupby('Team')['Rounds Win'].mean()
@@ -69,20 +68,21 @@ def mostrar_grafico5():
     plt.xticks(rotation="horizontal", ha="center")
     st.pyplot() 
 
-col1, col2, col3, col4, col5 = st.columns(1, 1, 1, 1, 1)
+col1, col2, col3, col4, col5 = st.columns(5)  # Corrección de los parámetros de columnas
 # Redirigir con el botón
 with col1:
     if st.button("¡Descubre el Poder de los Equipos!"):
-    mostrar_grafico()
+        mostrar_grafico()
 with col2:
     if st.button("¿Quién es el Rey de las Bajas?"):
-    mostrar_grafico1()
+        mostrar_grafico2()
 with col3:
     if st.button("¡Las Muertes también Hablan!"):
-    mostrar_grafico2()
+        mostrar_grafico3()
 with col4:
     if st.button("¿Quién Tiene la Mayor Cantidad de Victorias?"):
-    mostrar_grafico3()
-with col4:
+        mostrar_grafico4()
+with col5:  # Cambié col4 por col5, ya que el índice col4 ya estaba siendo utilizado.
     if st.button("¿Quién Sufrió Más Derrotas?"):
-    mostrar_grafico4()
+        mostrar_grafico5()
+
