@@ -1,5 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import pandas as pd
 
 df = pd.read_csv("valorant champions istanbul.csv")
 
